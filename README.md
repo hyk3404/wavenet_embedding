@@ -9,14 +9,11 @@ magenta
 numpy
 librosa
 tensorflow
-
 ```
 
 ## Before the start
-* create folder
-```
-mkdir dataset
-```
+* Create a folder named dataset in this project
+
 * You need have wavenet embedding [pretrain model](https://github.com/tensorflow/magenta/tree/master/magenta/models/nsynth)
 
 ## run
