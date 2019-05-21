@@ -23,6 +23,7 @@ python wavenet_embedding_vector.py
 ```
 ## comparison
 * If you want to compare the number of mp3 and npy
+* This code will output comparison.txt
 ```
 python file_comparison.py
 ```
