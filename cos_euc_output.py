@@ -20,7 +20,7 @@ def cos_sim(path,name):
 
     for music_name, path in zip(file_name, file_list):
         sort = df_cos_sim[music_name].sort_values(ascending=False)
-        sort_20 = pd.DataFrame(sort.head(5))
+        sort_20 = pd.DataFrame(sort.head(20))
 
         sort_20.to_csv(path.replace('.npy', '')+'_cos.csv')
         print(path.replace('.npy', '')+'_cos.csv')
@@ -41,7 +41,7 @@ def euc_dis(path,name):
 
     for music_name, path in zip(file_name, file_list):
         sort = df_euc_dis[music_name].sort_values(ascending=True)
-        sort_20 = pd.DataFrame(sort.head(5))
+        sort_20 = pd.DataFrame(sort.head(20))
 
         sort_20.to_csv(path.replace('.npy', '')+'_euc.csv')
         print(path.replace('.npy', '')+'_euc.csv')

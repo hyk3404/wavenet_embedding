@@ -2,7 +2,7 @@ from file_load import file_path
 import pandas as pd
 import numpy as np
 
-def recommend(music_path,music_name):
+def recommend(music_path,music_name): #(mp3位置,mp3名稱)都吃list
     # cos_list, cos_name, folder_list, folder_name = file_path('./dataset', '_cos.csv')
     # euc_list, euc_name, folder_list, folder_name = file_path('./dataset', '_euc.csv')
     recommend_list=[]
@@ -24,15 +24,19 @@ def recommend(music_path,music_name):
 
         if len(ret)>=2:
             ret = ret[0:2]
+
+        elif len(ret)==1:
+            euc_set = list(set(euc).difference(set(music_name)))
+            ret = ret + euc_set[0]
         
         else:
-            ret = list(set(euc).difference(set(music_name)))
+            euc_set = list(set(euc).difference(set(music_name)))
             ret = ret[0:2]
 
         recommend_list += ret
     
     # print(len(recommend_list))
-    
+
     return recommend_list
 
 # if __name__ == "__main__":
