@@ -1,6 +1,7 @@
 from file_load import file_path
 import pandas as pd
 import numpy as np
+import datetime
 
 def recommend(music_path,music_name): #(mp3位置,mp3名稱)都吃list
     # cos_list, cos_name, folder_list, folder_name = file_path('./dataset', '_cos.csv')
@@ -44,6 +45,17 @@ def recommend(music_path,music_name): #(mp3位置,mp3名稱)都吃list
 
     return recommend_list
 
+def recommend_to_sql(user, love_list, music_name):
+    day = datetime.date.today()
+    recommend_list = recommend(love_list, music_name)
+    username = user
+    
+    row = (username, recommend_list, day)
+
+    sql = "INSERT INTO tracks.tracks_recommend (`user`, `recommend_list`, `day`) VALUES "+ str(row) + ";"
+
+    return sql
+    
 # if __name__ == "__main__":
 #     file_list, file_name, folder_list, folder_name = file_path('./dataset', '_OK.npy')
 #     recommend(file_list,file_name)
