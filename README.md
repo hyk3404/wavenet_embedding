@@ -17,9 +17,13 @@ tensorflow
 * You need have wavenet embedding [pretrain model](https://github.com/tensorflow/magenta/tree/master/magenta/models/nsynth)
 
 ## run
-
+* step 1 get the vector
 ```
 python wavenet_embedding_vector.py
+```
+* step 2 get the similarity
+```
+python cos_euc_output.py
 ```
 ## comparison
 * If you want to compare the number of mp3 and npy
