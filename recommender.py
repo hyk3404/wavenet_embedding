@@ -19,7 +19,7 @@ def recommend(music_path,music_name): #(mp3位置,mp3名稱)都吃list
         for i in range(len(cos)):
             cos[i]=cos[i][0]
 
-        euc = pd.read_csv(mp3_path.replace('.mp3', '_euc.csv'))
+        euc = pd.read_csv(mp3_path.mp3replace('.mp3', '_euc.csv'))
         euc = euc.iloc[1:,0:1].values.tolist()
 
         for i in range(len(cos)):
@@ -42,6 +42,8 @@ def recommend(music_path,music_name): #(mp3位置,mp3名稱)都吃list
         recommend_list += ret
     
     # print(len(recommend_list))
+    print(euc)
+    print(cos)
 
     return recommend_list
 
@@ -56,6 +58,6 @@ def recommend_to_sql(user, love_list, music_name):
 
     return sql
     
-# if __name__ == "__main__":
-#     file_list, file_name, folder_list, folder_name = file_path('./dataset', '_OK.npy')
-#     recommend(file_list,file_name)
+if __name__ == "__main__":
+    file_list, file_name, folder_list, folder_name = file_path('./dataset', '_OK.npy')
+    recommend(file_list,file_name)

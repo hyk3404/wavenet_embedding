@@ -7,7 +7,7 @@ def file_comparison(mp3,npy,path):
     replace_npy = []
 
     for npy_path in npy_list:
-        temp = npy_path.replace(npy, '.mp3')
+        temp = npy_path.replace('.npy', '.mp3')
         replace_npy.append(temp)
 
     comparison = list(set(mp3_list).difference(set(replace_npy)))
@@ -19,4 +19,4 @@ def file_comparison(mp3,npy,path):
     with open("./comparison.txt", "w", encoding="utf-8")as txt:
         txt.write(str(comparison))
 
-file_comparison('.mp3','.npy','./dataset')
+file_comparison('.mp3','.npy','./test')
